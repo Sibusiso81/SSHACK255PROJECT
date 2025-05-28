@@ -1,0 +1,61 @@
+"use client";
+
+import React, { useState } from "react";
+
+import { langData } from "@/app/Uitils/LangData";
+
+import Hero from "../LandingPage/Hero";
+
+function LandingPage() {
+  const [langSelected, setLangSelected] = useState(String);
+  const [selected, setSelected] = useState(false);
+  const [index, setIndex] = useState<number>(0);
+console.log(langSelected)
+  function handleSelectedLanguage(i: number) {
+    setLangSelected(langData[i].language);
+    setSelected(true);
+
+    setIndex(langData.indexOf(langData[i]));
+  }
+  return (
+    <>
+      {!selected ? (
+        <div className="w-screen h-screen flex flex-col font-poppins bg-gradient-to-bl bg-white items-center justify-center p-3">
+          {" "}
+          <div className="mx-auto my-auto md:w-1/2 max-w-screen-md space-y-8 place-self-center justify-self-center ">
+            <div className="flex flex-col justify-between">
+              <h1 className="place-self-start text-lg font-medium">
+                Please Select a prefered Language :
+              </h1>
+              <span className="w-32 h-1  border-b-4 border-lime-400 p-1 "></span>
+            </div>
+            <div className=" grid grid-cols-3 gap-3 text-md">
+              {Array(10)
+                .fill(null)
+                .map((_, i) => (
+                  <button
+                    className="p-2 bg-gray-200 text-md rounded-md hover:bg-gray-300/85"
+                    onClick={() => handleSelectedLanguage(i)}
+                    key={i}
+                  >
+                    {langData[i].language}
+                  </button>
+                ))}
+            </div>
+          </div>
+          <div className="flex flex-col  ">
+            <div>
+              <h2></h2>
+            </div>
+          </div>
+        </div>
+      ) : (
+        <>
+          <Hero index={index}/>
+        </>
+      )}
+    </>
+  );
+}
+
+export default LandingPage;
