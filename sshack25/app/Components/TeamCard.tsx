@@ -1,4 +1,4 @@
-import { TeamProfileCard } from '@/lib/utils'
+/* import { TeamProfileCard } from '@/lib/utils'
 import React from 'react'
 
 function TeamCard({inview,name,role,description,image}:TeamProfileCard) {
@@ -14,4 +14,4 @@ function TeamCard({inview,name,role,description,image}:TeamProfileCard) {
   )
 }
 
-export default TeamCard
+export default TeamCard */
