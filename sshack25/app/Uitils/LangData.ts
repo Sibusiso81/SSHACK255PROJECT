@@ -173,6 +173,28 @@ export const langData = [
       },
     ],
     Pricing: {
+       basicPlan: {
+        price: "Mahhala",
+        description:
+          "Ilungele abantu abafuna amathuluzi abalulekile ezokuphepha ku-inthanethi.",
+        features: [
+          "Ukuthola Izinsongo Ngesikhathi Sangempela",
+          "Isandiso Sokuphepha Sokuphequlula",
+          "Ukuvikela Ubugebengu Bokweba Imininingwane Yomuntu",
+          "Isandiso Sokuphepha Sokuphequlula",
+        ],
+      },
+       enterprisePlan: {
+        price: "R100",
+        description:
+          "Izixazululo zokuphepha eziphelele zezinhlangano ezinkulu.",
+        features: [
+          "Zonke izici ku-Pro Plan",
+          "Izixazululo Zokuphepha Ezenziwe Ngokwezifiso",
+          "Umphathi We-akhawunti Ozinikele",
+          "Ukusekelwa Okungu-24/7",
+        ],
+      },
       proPlan: {
         price: "R120",
         description:
@@ -184,28 +206,8 @@ export const langData = [
           "Ukusekelwa Okusemqoka",
         ],
       },
-      enterprisePlan: {
-        price: "R100",
-        description:
-          "Izixazululo zokuphepha eziphelele zezinhlangano ezinkulu.",
-        features: [
-          "Zonke izici ku-Pro Plan",
-          "Izixazululo Zokuphepha Ezenziwe Ngokwezifiso",
-          "Umphathi We-akhawunti Ozinikele",
-          "Ukusekelwa Okungu-24/7",
-        ],
-      },
-      basicPlan: {
-        price: "Mahhala",
-        description:
-          "Ilungele abantu abafuna amathuluzi abalulekile ezokuphepha ku-inthanethi.",
-        features: [
-          "Ukuthola Izinsongo Ngesikhathi Sangempela",
-          "Isandiso Sokuphepha Sokuphequlula",
-          "Ukuvikela Ubugebengu Bokweba Imininingwane Yomuntu",
-          "Isandiso Sokuphepha Sokuphequlula",
-        ],
-      },
+     
+     
     },
     getStartedSection: {
       heading: "Vula Ukuphepha Kwakho Kwedijithali",
@@ -409,6 +411,27 @@ export const langData = [
       },
     ],
     Pricing: {
+       basicPlan: {
+        price: "Simahla",
+        description:
+          "Ifanelekile kubantu abafuna izixhobo eziyimfuneko zokhuseleko lwe-cyber.",
+        features: [
+          "Ukufumanisa Izisongelo Ngexesha Lokwenene",
+          "Isandiso Sokukhangela Esikhuselekileyo",
+          "Ukhuseleko lwePhishing",
+          "Isandiso Sokukhangela Esikhuselekileyo",
+        ],
+      },
+       enterprisePlan: {
+        price: "R100",
+        description: "Izisombululo zokhuseleko ezibanzi kwimibutho emikhulu.",
+        features: [
+          "Zonke iimpawu kwi-Pro Plan",
+          "Izisombululo Zokhuseleko Ezenziwe Ngokwezifiso",
+          "Umphathi We-akhawunti Ozinikeleyo",
+          "Inkxaso ye-24/7",
+        ],
+      },
       proPlan: {
         price: "R120",
         description:
@@ -420,27 +443,8 @@ export const langData = [
           "Inkxaso Ephambili",
         ],
       },
-      enterprisePlan: {
-        price: "R100",
-        description: "Izisombululo zokhuseleko ezibanzi kwimibutho emikhulu.",
-        features: [
-          "Zonke iimpawu kwi-Pro Plan",
-          "Izisombululo Zokhuseleko Ezenziwe Ngokwezifiso",
-          "Umphathi We-akhawunti Ozinikeleyo",
-          "Inkxaso ye-24/7",
-        ],
-      },
-      basicPlan: {
-        price: "Simahla",
-        description:
-          "Ifanelekile kubantu abafuna izixhobo eziyimfuneko zokhuseleko lwe-cyber.",
-        features: [
-          "Ukufumanisa Izisongelo Ngexesha Lokwenene",
-          "Isandiso Sokukhangela Esikhuselekileyo",
-          "Ukhuseleko lwePhishing",
-          "Isandiso Sokukhangela Esikhuselekileyo",
-        ],
-      },
+     
+     
     },
     getStartedSection: {
       heading: "Vula Ukhuseleko Lwakho Lwedijithali",

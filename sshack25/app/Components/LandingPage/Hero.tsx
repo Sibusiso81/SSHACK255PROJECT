@@ -55,7 +55,7 @@ console.log(active)
             </div>
             <div className="lg:place-self-end max-w-screen-sm lg:w-1/2 ">
               {" "}
-             <Link href="#About">
+             <Link href="/Auth/SignUp">
               <button className="w-full hover:cursor-pointer p-4 text-center bg-lime-400 text-black lg:place-self-end justify-self-end    lg:place-content-end">
                 {langData[index].heroSection.callToAction}
               </button>

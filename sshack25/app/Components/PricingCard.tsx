@@ -1,5 +1,7 @@
+import { Button } from '@/components/ui/button'
 import { PricingCardProps } from '@/lib/utils'
 import { Check } from 'lucide-react'
+import Link from 'next/link'
 import React from 'react'
 
 function PricingCard({price,description,features,idx,buttonText}:PricingCardProps) {
@@ -26,9 +28,11 @@ function PricingCard({price,description,features,idx,buttonText}:PricingCardProp
     )
 }
 
-<button className={`w-full p-3 text-center bg-neutral-950 text-white rounded-lg ${idx === 0 ? 'hover:bg-neutral-800' : idx === 1 ? 'hover:bg-neutral-700 bg-white text-black'  : 'hover:bg-neutral-600'} transition-colors duration-300`}>
+<Link href={'Auth/SignUp'} >
+<Button variant={`${idx ===1 ?'secondary':'default'}`} className={`w-full p-6 rounded-lg cursor-pointer   `}>
 <p className={`${idx === 0 ?' text-white': idx===1? 'text-black ':' text-white' }`}>{buttonText}</p>
-</button>
+</Button>
+</Link>
    </div>
   )
 }
