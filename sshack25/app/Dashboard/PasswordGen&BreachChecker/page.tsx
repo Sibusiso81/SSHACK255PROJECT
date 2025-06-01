@@ -2,7 +2,7 @@ import React from 'react'
 
 function page() {
   return (
-    <div>Chat</div>
+    <div>Password Gen & Breach Cheker </div>
   )
 }
 

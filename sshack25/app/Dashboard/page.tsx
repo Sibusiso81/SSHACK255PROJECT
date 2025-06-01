@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-function page() {
+export default function Page() {
   return (
-    <div>page</div>
+   <p>Dashbord page</p>
   )
 }
-
-export default page
