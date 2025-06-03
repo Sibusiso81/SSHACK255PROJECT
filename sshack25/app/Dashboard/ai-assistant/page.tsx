@@ -141,10 +141,10 @@ function Page() {
   };
 
   // Handle file selection
-  const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    if (e.target.files && e.target.files[0]) {
-      console.log(e)
-      setFile(e.target.files[0]);
+  const handleFileChange = (_: React.ChangeEvent<HTMLInputElement>) => {
+    if (_.target.files && _.target.files[0]) {
+      
+      setFile(_.target.files[0]);
     }
   };
 

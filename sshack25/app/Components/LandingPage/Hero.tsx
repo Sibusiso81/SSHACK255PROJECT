@@ -1,5 +1,5 @@
 "use client";
-import React, {  useEffect, useState } from "react";
+import React, {   useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import { langData } from "@/app/Uitils/LangData";
 import { LandingPageProps } from "@/lib/utils";
@@ -10,13 +10,13 @@ import HowItWorksCard from "../HowItWorksCard";
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
 import { LucideIconName } from "../DynamicLucideIcon";
-import { useLanguage } from "../useLanguage";
+
 
 
 
 
 function Hero({ index, onLanguageChange }: LandingPageProps) {
-  const { setLanguage } = useLanguage(); // <-- call here
+   // <-- call here
   const language = langData[index].language;
   /* const team = ["Sanele",'Ahmed','Muhammad','Sibusiso'] */
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -25,15 +25,7 @@ function Hero({ index, onLanguageChange }: LandingPageProps) {
 setActive(i)
 console.log(active)
   } */
-  useEffect(() => {
-  if (onLanguageChange) {
-    onLanguageChange(language);
-  }
-}, [language, onLanguageChange]);
-
-  useEffect(() => {
-    setLanguage(language);
-  }, [language, setLanguage]);
+ 
 
   return (
     <main className="overflow-hidden">
