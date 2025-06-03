@@ -92,7 +92,11 @@ const [,setLoading] = useState<boolean>(true);
 })
       .then((response) => {
         setRawResponse(response);
-        response ?setLoading(false):setLoading(true); 
+        if (response) {
+          setLoading(false);
+        } else {
+          setLoading(true);
+        }
         console.log("Raw response:", response);
         try {
           let cleaned = response.replace(/^[\s\S]*?({)/, "$1");
@@ -110,11 +114,11 @@ const [,setLoading] = useState<boolean>(true);
       .catch((error) => {
         console.error("Error in LLM:", error);
       });
-  }, []);
+  }, [language, selectedInterests]);
   useEffect(() => {
     console.log("Updated summary:", summary);
     console.log("Updated quiz:", quiz);
-  }, [quiz, resources]);
+  }, [quiz, resources, summary]);
 
   return (
     <main className="flex flex-col min-h-screen w-full bg-neutral-950 font-poppins text-[#ececec]">

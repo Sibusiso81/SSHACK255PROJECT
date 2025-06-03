@@ -143,8 +143,8 @@ function Page() {
   // Handle file selection
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
+      console.log(e)
       setFile(e.target.files[0]);
-      setFile(null);
     }
   };
 
@@ -179,7 +179,7 @@ function Page() {
                   {Array.isArray(msg.content.resources) &&
                     msg.content.resources.length > 0 && (
                       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
-                        {msg.content.resources.map((res: any, i: number) => (
+                        {msg.content.resources.map((res: Resource, i: number) => (
                           <div key={i} className=" flex flex-col items-start">
                             <div className="bg-neutral-900 rounded-lg p-3 flex flex-col space-y-2 text-xs">
                               <a
