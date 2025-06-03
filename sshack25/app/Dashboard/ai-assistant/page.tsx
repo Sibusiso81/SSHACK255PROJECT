@@ -53,8 +53,8 @@ function Page() {
   }, [userInput, sampleInputs.length]);
 
   // Handle form submit
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = async (_: React.FormEvent) => {
+    _.preventDefault();
     const key = process.env.NEXT_PUBLIC_GEMINI_AI_API_KEY;
     if (!key) {
       console.error("API key is missing");
@@ -115,6 +115,7 @@ function Page() {
           ]);
         } catch (e) {
           // fallback
+          console.error("Error parsing AI response:", e);
           setMessages((prev) => [...prev, { role: "ai", content: response }]);
         }
       })

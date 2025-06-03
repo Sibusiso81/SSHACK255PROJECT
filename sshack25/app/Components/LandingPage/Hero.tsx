@@ -1,5 +1,5 @@
 "use client";
-import React, {   useState } from "react";
+import React, {   useState, useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import { langData } from "@/app/Uitils/LangData";
 import { LandingPageProps } from "@/lib/utils";
@@ -15,7 +15,7 @@ import { LucideIconName } from "../DynamicLucideIcon";
 
 
 
-function Hero({ index}: LandingPageProps) {
+function Hero({ index, onLanguageChange}: LandingPageProps) {
    // <-- call here
   const language = langData[index].language;
   console.log("Current language:", language);
@@ -26,7 +26,11 @@ function Hero({ index}: LandingPageProps) {
 setActive(i)
 console.log(active)
   } */
- 
+ useEffect(() => {
+  if (onLanguageChange) {
+    onLanguageChange(language);
+  }
+}, [language, onLanguageChange]);
 
   return (
     <main className="overflow-hidden">
