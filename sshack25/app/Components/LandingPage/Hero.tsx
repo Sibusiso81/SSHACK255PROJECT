@@ -15,9 +15,10 @@ import { LucideIconName } from "../DynamicLucideIcon";
 
 
 
-function Hero({ index, onLanguageChange }: LandingPageProps) {
+function Hero({ index}: LandingPageProps) {
    // <-- call here
   const language = langData[index].language;
+  console.log("Current language:", language);
   /* const team = ["Sanele",'Ahmed','Muhammad','Sibusiso'] */
   const [isOpen, setIsOpen] = useState<boolean>(false);
 /*   const [active,setActive] = useState<Number>(0)
