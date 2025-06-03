@@ -18,6 +18,10 @@ console.log(langSelected)
 
     setIndex(langData.indexOf(langData[i]));
   }
+  function setUserLanguage(lang: string): void {
+    setLangSelected(lang);
+  }
+
   return (
     <>
       {!selected ? (
@@ -64,8 +68,7 @@ console.log(langSelected)
         </div>
       ) : (
         <>
-          <Hero index={index}/>
-        </>
+<Hero index={index} onLanguageChange={lang => setUserLanguage(lang)} />        </>
       )}
     </>
   );

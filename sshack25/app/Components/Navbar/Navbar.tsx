@@ -87,13 +87,7 @@ function Navbar() {
               </Link>
             </motion.div>
           </li>
-          <li className="overflow-hidden">
-            <motion.div variants={navLink} initial='hidden' animate='show' exit='exit' className=" p-1">
-              <Link href={'#Pricing'} className="text-[40px] md:text-[60px] hover:text-[#eaeaea] h-fit p-1">
-              Pricing
-              </Link>
-            </motion.div>
-          </li>
+          
          
          
         </ul>

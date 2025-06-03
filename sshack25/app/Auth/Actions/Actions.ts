@@ -23,6 +23,24 @@ export async function login(formData: FormData) {
   revalidatePath("/", "layout");
   redirect("/Dashboard");
 }
+export async function signInWithOAuth(){
+  const supabase = await createClient();
+  const { data, error } = await supabase.auth.signInWithOAuth({
+    provider: "github",
+    options: {
+      redirectTo: 'http://localhost:3000/Auth/Callback', // or wherever you want to redirect after login
+    },
+});
+  if (error) {
+    console.log(error);
+    redirect("/Auth/Error");
+    return;
+  }if (data.url) {
+  redirect(data.url) // use the redirect API for your server framework
+}
+}
+ 
+
 
 export async function signup(formData: FormData) {
   console.log("signup called");

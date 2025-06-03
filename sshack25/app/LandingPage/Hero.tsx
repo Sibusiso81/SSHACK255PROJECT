@@ -1,22 +1,24 @@
 "use client";
 import React, {  useEffect, useState } from "react";
-import Navbar from "../Navbar/Navbar";
 import { langData } from "@/app/Uitils/LangData";
 import { LandingPageProps } from "@/lib/utils";
-import FeatureCard from "../FeatureCard";
-import PricingCard from "../PricingCard";
+
+
 import { Menu,  X } from "lucide-react";
-import HowItWorksCard from "../HowItWorksCard";
+
 import { AnimatePresence } from "framer-motion";
 import Link from "next/link";
-import { LucideIconName } from "../DynamicLucideIcon";
-import { useLanguage } from "../useLanguage";
+// import { LucideIconName } from "../DynamicLucideIcon";
+import Navbar from "../Components/Navbar/Navbar";
+import FeatureCard from "../Components/FeatureCard";
+import PricingCard from "../Components/PricingCard";
+import HowItWorksCard from "../Components/HowItWorksCard";
+import { useLanguage } from "../Components/useLanguage";
 
+import { LucideIconName } from "../Components/DynamicLucideIcon";
 
-
-
-function Hero({ index, onLanguageChange }: LandingPageProps) {
-  const { setLanguage } = useLanguage(); // <-- call here
+function Hero({ index,onLanguageChange }: LandingPageProps) {
+  
   const language = langData[index].language;
   /* const team = ["Sanele",'Ahmed','Muhammad','Sibusiso'] */
   const [isOpen, setIsOpen] = useState<boolean>(false);
@@ -25,15 +27,15 @@ function Hero({ index, onLanguageChange }: LandingPageProps) {
 setActive(i)
 console.log(active)
   } */
-  useEffect(() => {
-  if (onLanguageChange) {
-    onLanguageChange(language);
-  }
-}, [language, onLanguageChange]);
-
-  useEffect(() => {
-    setLanguage(language);
-  }, [language, setLanguage]);
+   useEffect(() => {
+     if (onLanguageChange) {
+       onLanguageChange(language);
+     }
+   }, [language, onlanguagechange]);
+    React.useEffect(() => {
+      useLanguage().setLanguage(language);
+   
+  }, [language]);
 
   return (
     <main className="overflow-hidden">

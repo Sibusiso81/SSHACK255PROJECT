@@ -20,11 +20,12 @@ function PricingCard({price,description,features,idx,buttonText}:PricingCardProp
 <div className='w-full h-0.5 bg-neutral-300/30'></div>
 {
     features&&(
-        features.map((items)=>(
-            <ul className='flex space-x-4 text-sm' key={items}>
-                <Check className={`stroke-gray-400 ${idx === 0 ?' ': idx===1? 'bg-white  ':' text-white' } bg-gray-200/45 rounded-full w-4 h-4 `}/><li>{items}</li>
-            </ul>
-        ))
+        features.map((item, i) => (
+    <ul className='flex space-x-4 text-sm' key={`${item}-${i}`}>
+        <Check className={`stroke-gray-400 ${idx === 0 ?' ': idx===1? 'bg-white  ':' text-white' } bg-gray-200/45 rounded-full w-4 h-4 `}/>
+        <li>{item}</li>
+    </ul>
+))
     )
 }
 

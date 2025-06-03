@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 
 import "./globals.css";
+import { LanguageProvider } from "./Components/LanguageProvider";
 
 
 
@@ -19,7 +20,10 @@ export default function RootLayout({
       <body
         className={`font-sans antialiased`}
       >
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
+        
       </body>
     </html>
   );

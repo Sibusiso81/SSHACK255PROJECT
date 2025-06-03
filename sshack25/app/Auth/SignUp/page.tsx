@@ -12,54 +12,39 @@ import {
   FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
-import { signup } from "../Actions/Actions";
-import Link from "next/link";
+import { signInWithOAuth} from "../Actions/Actions";
 import { Button } from "@/components/ui/button";
-import { toast, Toaster } from "sonner";
+import {  Toaster } from "sonner";
+import { Github } from "lucide-react";
 
 const formSchema = z.object({
-  password: z
-    .string()
-    .min(2, { message: "Password must be at least 2 characters long." })
-    .max(50, { message: "Password must be no longer than 50 characters." }),
-  email: z
-    .string()
-    .email({ message: "Please enter a valid email address." })
-    .max(100, { message: "Email must be no longer than 100 characters." }),
+  username:z.string().min(1, {
+    message: "Username is required",  })
 });
 
 function ProfileForm() {
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
-      password: "",
-      email: "",
+      username:''
+    
     },
   });
-  function sendConfirmation(formData: FormData) {
-    const email = formData.get("email") as string;
-    const password = formData.get("password") as string;
-    if (email && password) {
-      // Add your logic here
-      toast.success("Confirmation email sent");
-    } else {
-      toast.error("Provide valid name / email");
-    }
-  }
+ 
   return (
     <Form {...form}>
       <form className="space-y-6 lg:space-y-8">
         <FormField
           control={form.control}
-          name="email"
+          name="username"
           render={({ field }) => (
             <FormItem>
-              <FormLabel>Email</FormLabel>
+              <FormLabel>Username</FormLabel>
               <FormControl>
                 <Input
                   className="p-4"
-                  placeholder="Enter your email"
-                  type="email"
+                  placeholder="Enter a username"
+                  type="username"
                   {...field}
                 />
               </FormControl>
@@ -67,56 +52,20 @@ function ProfileForm() {
             </FormItem>
           )}
         />
-        <FormField
-          control={form.control}
-          name="password"
-          render={({ field }) => (
-            <FormItem>
-              <FormLabel>Password</FormLabel>
-              <FormControl>
-                <Input
-                  className="p-4"
-                  placeholder="Enter your password"
-                  type="password"
-                  {...field}
-                />
-              </FormControl>
-              <FormMessage />
-            </FormItem>
-          )}
-        />
+       
 
         <div className="flex flex-col  max-w-screen-sm space-y-2">
           <Toaster position="top-right" />
-          <Link href={"/Auth/ChangePassword"} className="place-self-end">
-            <button className="p-1  text-sm">
-              <span className="text-muted-foreground ">Forgot Password ?</span>
-            </button>
-          </Link>
-          <Button
-            variant={"default"}
-            onClick={form.handleSubmit((data) => {
-              const formData = new FormData();
-              formData.append("email", data.email);
-              formData.append("password", data.password);
-              sendConfirmation(formData);
-              signup(formData);
-            })}
-            formAction={signup}
-          >
-            Sign up
-          </Button>
+        
+          
 
-          <div className="flex flex-row space-x-2 items-center">
-            <div className="border w-full bg-neutral-900"></div>
-            <p className="text-center text-muted-foreground">or</p>
-            <div className="border w-full bg-neutral-900"></div>
-          </div>
-          <Link href={"/Auth/Login"}>
-            <Button variant={"default"} className="w-full">
-              Log in
+         
+          
+            <Button variant={"secondary"} className="w-full hover:bg-black hover:stroke-white hover:text-white flex space-x-5 p-2" onClick={signInWithOAuth}>
+              <p>Sign Up with Github </p>
+              <Github className="stroke-black w-8  h-8 h rounded-md"/>
             </Button>
-          </Link>
+          
         </div>
       </form>
     </Form>

@@ -7,7 +7,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export interface LandingPageProps{
-  index:number
+  index:number,
+  onLanguageChange:(lang:string)=>void,
 }
 export interface FeatureCardProps{
   icon:LucideIconName,
@@ -34,4 +35,12 @@ export interface TeamProfileCard{
   role:string,
   description:string,
   image:string,
+}
+export interface TipsProps {
+  key: string;
+  prompt: { text: string }[];
+  contents: {
+    role: string;
+    parts: { text: string }[];
+  }[];
 }

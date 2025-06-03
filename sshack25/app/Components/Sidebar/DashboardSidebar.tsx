@@ -41,9 +41,11 @@ function DashboardSidebar() {
       containerControls.start("close");
       svgControls.start("close");
     }
-  }, [isOpen]);
+  }, [isOpen, containerControls, svgControls]);
   function handleNavControls() {
     setIsOpen(!isOpen);
+    console.log(`${isOpen?'menu opened':'menu closed'}`)
+    console.log('menu clicked')
   }
   return (
     <motion.nav
@@ -51,7 +53,7 @@ function DashboardSidebar() {
       animate={containerControls}
       initial="close"
       className="bg-neutral-900
-    flex flex-col z-20 gap-20 p-5 absolute top-0 left-0 h-full shadoow shadow-neutral-600"
+    flex flex-col  z-50 gap-20 p-5 absolute top-0 left-0 h-full shadoow "
     >
       <div className="flex flex-row justify-between place-items-center ">
         <div className="w-8 h-8 bg-gradient-to-br from-neutral-900 to-lime-400 rounded-full" />
@@ -92,26 +94,26 @@ function DashboardSidebar() {
     ]
       
       */}
-      <div className="flex flex-col gap-3 gap-y-10">
-        <Sidebarlinks isOpen={isOpen} name="Overview" path="Overview">
-           <ActivitySquare className="stroke-white stroke-[0.75] minw-8 w-8 "/> 
-        </Sidebarlinks>
-        <Sidebarlinks isOpen={isOpen} name="Passwords" path="PasswordGen&BreachChecker">
-           <KeyRound className="stroke-white stroke-[0.75] minw-8 w-8 "/> 
-        </Sidebarlinks>
-        <Sidebarlinks isOpen={isOpen} name="Emails & Attachments " path="Emails&Attachment Scanner">
-           <Paperclip className="stroke-white stroke-[0.75] minw-8 w-8 "/> 
-        </Sidebarlinks>
-        <Sidebarlinks isOpen={isOpen} name="AI-Assistant" path="AI-CyberSecurity Aassistant">
-           <MessageSquareCode className="stroke-white stroke-[0.75] minw-8 w-8 "/> 
-        </Sidebarlinks>
-        <Sidebarlinks isOpen={isOpen} name="URL Security " path="URL&WebsiteSecurity">
-           <GlobeLock className="stroke-white stroke-[0.75] minw-8 w-8 "/> 
-        </Sidebarlinks>
-        <Sidebarlinks isOpen={isOpen} name="Devices & Netowrks " path="Device&NetworkSecurity">
-           <Router className="stroke-white stroke-[0.75] minw-8 w-8 "/> 
-        </Sidebarlinks>
-      </div>
+     <div className="flex flex-col gap-3 gap-y-10">
+  <Sidebarlinks isOpen={isOpen} name="Overview" path="/Dashboard/overview">
+    <ActivitySquare className="stroke-white stroke-[0.75] minw-8 w-8 "/>
+  </Sidebarlinks>
+  <Sidebarlinks isOpen={isOpen} name="Passwords" path="/Dashboard/password-gen-breach-checker">
+    <KeyRound className="stroke-white stroke-[0.75] minw-8 w-8 "/>
+  </Sidebarlinks>
+  <Sidebarlinks isOpen={isOpen} name="Emails & Attachments" path="/Dashboard/emails-attachment-scanner">
+    <Paperclip className="stroke-white stroke-[0.75] minw-8 w-8 "/>
+  </Sidebarlinks>
+  <Sidebarlinks isOpen={isOpen} name="AI-Assistant" path="/Dashboard/ai-assistant">
+    <MessageSquareCode className="stroke-white stroke-[0.75] minw-8 w-8 "/>
+  </Sidebarlinks>
+  <Sidebarlinks isOpen={isOpen} name="URL Security" path="/Dashboard/url-website-security">
+    <GlobeLock className="stroke-white stroke-[0.75] minw-8 w-8 "/>
+  </Sidebarlinks>
+  <Sidebarlinks isOpen={isOpen} name="Devices & Networks" path="/Dashboard/device-network-security">
+    <Router className="stroke-white stroke-[0.75] minw-8 w-8 "/>
+  </Sidebarlinks>
+</div>
     
     </motion.nav>
   );
